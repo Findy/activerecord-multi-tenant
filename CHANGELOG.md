@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.4.0.findy.1      2026-05-13
+* [Findy fork] Guard `visit obj.alias` calls in `MultiTenant::ArelVisitorsDepthFirst` with `respond_to?(:alias)` so the visitor works on Rails 8.1, which removed the `alias` attribute from `Arel::Nodes::Function` (and its `Avg`/`Exists`/`Max`/`Min`/`Sum`/`NamedFunction`/`Count` subclasses). Preserves existing behavior on Rails 6/7/8.0.
+
 ## 2.4.0      2023-09-22
 * Adds citus 12 to test matrix (#210)
 * Adds Support for rails 7.1 (#208)
